@@ -29,7 +29,7 @@ public class Game {
 				fistInframe += 2;
 			}
 		}
-		return score;
+		//return score;
 		
 	}
 
