@@ -14,22 +14,28 @@ public class Game {
 	
 	public int score() {
 		// TODO Auto-generated method stub
-		int fistInframe=0;
+		int firstInframe=0;
 		for(int frame =0; frame< 10; frame++)
 		{
-			if(rolls[fistInframe] + rolls[fistInframe+1] ==10) //spare
+			if(rolls[firstInframe] == 10) //strike
 			{
-				score += 10 + rolls[fistInframe+2];
-				fistInframe += 2;
+					score +=10 + rolls[firstInframe+1] + rolls[firstInframe+2];
+					firstInframe += 2;
+				
+			}
+			else if(rolls[firstInframe] + rolls[firstInframe+1] ==10) //spare
+			{
+				score += 10 + rolls[firstInframe+2];
+				firstInframe += 2;
 			}
 		
 			else {
 				//if(rolls[i] + rolls[i+1] == 10)
-				score += rolls[fistInframe] + rolls[fistInframe+1];
-				fistInframe += 2;
+				score += rolls[firstInframe] + rolls[firstInframe+1];
+				firstInframe += 2;
 			}
 		}
-		//return score;
+		return score;
 		
 	}
 
